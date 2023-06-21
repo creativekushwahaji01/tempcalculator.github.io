@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="https://creativekushwahaji01.github.io/link-master.github.io/" target="_blank">Link-Master</a>
+    <a href="https://creativekushwahaji01.github.io/masscalculator.github.io/ " target="_blank">Space mass
+      Calculator</a>
+    <a href="https://creativekushwahaji01.github.io/contact.html ">Contact</a>
+    <a href="https://creativekushwahaji01.github.io/">About</a>
+    <a href="https://creativekushwahaji01.github.io/blog.html">Blog</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars" style="
+        padding-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+      "></i>
+    </a>
+  </div>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+  <div class="center">
+    <div id="ctocal" class="converter">
+      <h2>Celsius to Kelvin Converter</h2>
+      <input type="number" id="celsiusInput" placeholder="Enter Celsius temperature" />
+      <button onclick="convertCelsiusToKelvin()">Convert</button>
+      <p id="kelvinOutput"></p>
+    </div>
+    <div id="caltoc" class="converter">
+      <h2>Kelvin to Celsius Converter</h2>
+      <input type="number" id="KelvinInput" placeholder="Enter Kelvin temperature" />
+      <button onclick="convertKelvinToCelsius()">Convert</button>
+      <p id="celsiusOutput"></p>
+    </div>
+    <div id="ctofer" class="converter">
+      <h2>Celsius to Fahrenheit Converter</h2>
+      <input type="number" id="celsiusInput2" placeholder="Enter Celsius temperature" />
+      <button onclick="convertCelsiusToFahrenheit()">Convert</button>
+      <p id="FahrenheitOutput"></p>
+    </div>
+    <div id="ferenheittocelcius" class="converter">
+      <h2>Farenheit to Celcius converter</h2>
+      <input id="Farenheitinput" type="number" placeholder="Enyter Farenheit temperature" />
+      <button onclick="convertFahrenheittocelcius()">Convert</button>
+      <p id="celciusoutput2"></p>
+    </div>
+  </div>
+  
+    <script>
+      function convertFahrenheittocelcius(){
+        var Fahrenheitinput=document.getElementById("Farenheitinput");
+        var Celsiusinput =document.getElementById("celciusoutput2");
+        Fahrenheit=parseFloat(Fahrenheitinput.value);
+
+        Celsius = (Fahrenheit - 32) / 1.8
+        Celsiusinput.textContent="Celsius: " + Celsius;
+      }
+      function convertCelsiusToKelvin() {
+      var celsiusInput = document.getElementById("celsiusInput");
+      var kelvinOutput = document.getElementById("kelvinOutput");
+
+      var celsius = parseFloat(celsiusInput.value);
+      var kelvin = celsius + 273.15;
+
+      kelvinOutput.textContent = "Kelvin: " + kelvin;
+    }
+    function convertKelvinToCelsius() {
+      var celsiusInput = document.getElementById("KelvinInput");
+      var kelvinOutput = document.getElementById("celsiusOutput");
+
+      var celsius = parseFloat(celsiusInput.value);
+      var kelvin = celsius - 273.15;
+
+      kelvinOutput.textContent = "Kelvin: " + kelvin;
+    }
+    function convertCelsiusToFahrenheit() {
+      var celsiusInput = document.getElementById("celsiusInput2");
+      var kelvinOutput = document.getElementById("FahrenheitOutput");
+
+      var celsius = parseFloat(celsiusInput.value);
+      var kelvin = celsius * 1.8 + 32;
+
+      kelvinOutput.textContent = "Kelvin: " + kelvin;
+    }
+    </script>
+  </div>
+</body>
+
+</html>
